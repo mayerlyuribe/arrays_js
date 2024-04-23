@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Array dinámico</title>
+</head>
+<body>
+    <h1>Array dinámico</h1>
+    <input type="text" id="elementoNuevo" placeholder="Introduce un elemento">
+    <button onclick="agregarElemento()">Agregar</button>
+    <button onclick="eliminarElemento()">Eliminar último</button>
+    <p id="array"></p>
+
+    <script>
+        let array = []; // Initialize an empty array
+
+        function agregarElemento() {
+            const elementoNuevo = document.getElementById('elementoNuevo').value;
+            array.push(elementoNuevo);
+            mostrarArray();
+        }
+
+        function eliminarElemento() {
+            if (array.length > 0) {
+                array.pop();
+                mostrarArray();
+            }
+        }
+
+        function mostrarArray() {
+            const arrayString = array.join(', '); // Convert array to comma-separated string
+            document.getElementById('array').textContent = arrayString;
+        }
+    </script>
+</body>
+</html>
